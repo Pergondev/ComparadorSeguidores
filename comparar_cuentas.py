@@ -16,25 +16,25 @@ def main():
     archivo_seguidos = "following.html"
     archivo_seguidores = "followers_1.html"
 
-    print("📥 Cargando archivos...")
+    print(" Cargando archivos...")
     lista_seguidos = cargar_cuentas_desde_html(archivo_seguidos)
     lista_seguidores = cargar_cuentas_desde_html(archivo_seguidores)
 
-    print(f"✅ Seguidos: {len(lista_seguidos)} cuentas")
-    print(f"✅ Seguidores: {len(lista_seguidores)} cuentas")
+    print(f" Seguidos: {len(lista_seguidos)} cuentas")
+    print(f" Seguidores: {len(lista_seguidores)} cuentas")
 
     cuentas_que_no_me_siguen = comparar_listas(lista_seguidos, lista_seguidores)
 
-    print("\n🚫 Cuentas que sigues y no te siguen:")
+    print("\n Cuentas que sigues y no te siguen:")
     for cuenta in cuentas_que_no_me_siguen:
-        print(f"👉 {cuenta}")
+        print(f" {cuenta}")
 
     # (Opcional) Guardar resultados en un archivo
     with open("no_me_siguen.txt", "w", encoding="utf-8") as salida:
         for cuenta in cuentas_que_no_me_siguen:
             salida.write(f"{cuenta}\n")
 
-    print("\n📄 Resultado guardado en 'no_me_siguen.txt'")
+    print("\n Resultado guardado en 'no_me_siguen.txt'")
 
 if __name__ == "__main__":
     main()
